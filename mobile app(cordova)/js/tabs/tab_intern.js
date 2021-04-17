@@ -32,7 +32,40 @@ let tab_intern = function()
         get_content_html()
         {
             let html = `<div class="content_company">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.        
+                    
+            <div class="head_content_filter"> 
+                <div id="hc_company_name" class="company_name"> Компании</div>
+                <div id="hc_company_filter" class="company_filter_btn"  > 
+                    <img class="company_filter_img" company_filter src="img/company/filter.png"> 
+                </div>
+                
+            </div>
+            
+            <div class="middle_company">
+                <div class="mid_1">ГОСКОРПОРАЦИЯ «РОСАТОМ»</div>
+                <div class="min_1">АО «РАСУ»</div>
+                <div class="min_3">АО «В/О «ИЗОТОП»</div>
+                <div class="min_2">АО «НИИТФА»</div>
+                <div class="big_1">КОРПОРАТИВНАЯ АКАДЕМИЯ РОСАТОМА</div>
+                <div class="mid_1">ООО «НИИАР-ГЕНЕРАЦИЯ»</div>
+
+            </div>
+            
+            <div class="bottom_island">
+                <div class="bottom_left">
+                    
+                    <div class="bottom_left_txt">Влево</div>
+                    <div class="bottom_left_img"></div>
+                </div>
+                <div class="bottom_center">
+                    1/1
+                </div>
+                <div class="bottom_right">
+                    <div class="bottom_right_txt">Вправо</div>
+                    <div class="bottom_right_img"></div>
+                </div>
+                
+            </div>
             
         </div>`;
             return html;

@@ -15,6 +15,22 @@ let tab_game = function()
                 this.content_show.call(this);
             }
         },
+        game_close()
+        {
+            let game_state = store.get("game_state");
+            if(game_state =="end")
+            {
+                this.show.call(this);
+            }
+        },
+        game_menu_close()
+        {
+            let game_menu_state = store.get("game_menu_state");
+            if(game_menu_state =="off")
+            {
+                this.show.call(this);
+            }
+        },
 
         tab_on()
         {
@@ -30,10 +46,36 @@ let tab_game = function()
             let content = this.get_content_html.call(this);
             $("#content").html(content);
         },
+        start_game()
+        {
+            store.set({game_state:"start"});
+        },
+        game_menu_open(name)
+        {
+            store.set({game_menu:name});
+            store.set({game_menu_state:"on"});
+        },
         get_content_html()
         {
             let html = `<div class="content_game_menu">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    
+            <div id="game_menu_name" class="head_content"> Игры
+            </div>
+            
+            <div class="middle_game_list_menu">
+                
+                
+                <div class="game_list">
+                    
+                    <div class="game_item" game="quiz">Викторина</div>
+                </div>
+                
+            </div>
+            
+            <div class="bottom_game">
+                
+                
+            </div>
             
         </div>`;
             return html;

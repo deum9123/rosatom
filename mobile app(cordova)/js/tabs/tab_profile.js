@@ -24,15 +24,32 @@ let tab_profile = function()
             $("#tab_forum").removeClass("tab_on");
             $("#tab_game").removeClass("tab_on");
         },
-        content_show()
+        async content_show()
         {
             let content = this.get_content_html.call(this);
             $("#content").html(content);
+            this.getPersonalData();
         },
-        get_content_html()
+
+        getPersonalData() {
+            game.loader('http://game-api.na4u.ru/api/user', this.setUserData);
+        },
+
+        setUserData(data) {
+            store.set({userData:data})
+            $('#profile_name').text(data.nick_name);
+            $('#userTypeClass').text(data.class_type);
+            $('#userSkills').text(data.skill_count);
+            $('#userRaiting').text(data.rating);
+            $('#userFriends').text(`${data.friends_online}/${data.friends_count}`);
+            $('#achievement_count').text(`${data.achievement_count}`);
+            $('#internship_count').text(`${data.internship_count}`);
+        },
+
+        get_content_html(userData)
         {
             let html = `<div class="content_profile">
-            <div id="profile_name" class="head_content"> Vasya_322
+            <div id="profile_name" class="head_content">
             </div>
             <div class="middle_profile">
                 <div id="setting_profile" class="middle_profile_item_2">
@@ -51,15 +68,21 @@ let tab_profile = function()
                     </div>
                 </div>
             </div>
-            <div class="bottom_profile">
+             <div class="bottom_profile">
                 <div class="lbl_profile ">Класс</div>
-                <div class="value_profile little_bg_profile">IT</div>
+                <div class="value_profile little_bg_profile" id="userTypeClass"></div>
                 <div class="lbl_profile">Скиллы</div>
-                <div class="value_profile little_bg_profile">5</div>
+                <div class="value_profile little_bg_profile" id="userSkills"></div>
                 <div class="lbl_profile">Рейтинг</div>
-                <div class="value_profile big_bg_profile">1050</div>
+                <div class="value_profile big_bg_profile" id="userRaiting"></div>
                 <div class="lbl_profile">Друзья online</div>
-                <div class="value_profile middle_bg_profile">2/5</div>
+                <div class="value_profile middle_bg_profile" id="userFriends"></div>
+                <div class="lbl_profile">Достижения</div>
+                <div class="value_profile little_bg_profile" id="achievement_count"></div>
+                <div class="lbl_profile">Стажировки</div>
+                <div class="value_profile little_bg_profile" id="internship_count"></div>
+                <div></div>
+                <div class="value_profile big_bg_profile" id="userFriends">Резюме</div>
             </div>
         </div>`;
             return html;
@@ -67,3 +90,4 @@ let tab_profile = function()
     };
     return tab_profile;
 }()
+

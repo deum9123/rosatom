@@ -29,7 +29,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -51,18 +51,121 @@
             </div>
             <div id="content" class="content">
                 
-                    
-            </div>
+                    <div class="content_game">
+                        <div class="game_top">
+                            <div >
+                                
+                            </div>
+                            <div class="timer_game">0:07</div>
+                            <div class="close_game" close_test>
+                                <img src="img/game/close.png">
+                            </div>
+                        </div>
+                        <div id="question_name" class="head_content"> Вопрос 3/15
+                        </div>
+                        <div class="middle_game">
+                            <div >
+                                
+        
+                            </div>
+                            <div class="question_text_test">
+                                Как сделать текст таким же <br>жирным, как твоя мамка?
+                            </div>
+                            <div class="answer_list">
+                                <div class="answer_item">
+                                    <div class="answer_number">1</div>
+                                    <div class="answer_item_bg" answer_state="off" answer_1>
+                                        <div class="answer_item_text">жирный</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="answer_item">
+                                    <div class="answer_number">2</div>
+                                    <div class="answer_item_bg" answer_state="on" answer_2>
+                                        <div class="answer_item_text">жирный</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="answer_item">
+                                    <div class="answer_number">3</div>
+                                    <div class="answer_item_bg" answer_state="off" answer_3>
+                                        <div class="answer_item_text">жирный</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="answer_item">
+                                    <div class="answer_number">4</div>
+                                    <div class="answer_item_bg" answer_state="off" answer_4>
+                                        <div class="answer_item_text">жирный</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom_game">
+                            
+                            
+                        </div>
+                        <div id="person_helper_place" class="person_helper_place">
+                            <div class="person_helper" helper_state="on">
+                                <img class="person_helper_img" src="img/person_helper/bag.png">
+                                <img helper_close class="person_helper_close" src="img/person_helper/close.png">
+                                <div class="text_helper_block">
+                                    <div class="text_helper">выпей ароматного кофе и <br>хорошенько подумай над<br> ответом</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 
             
             
         </div>
-        
+        <div id = "modal" class="modal" modal_state="off">
+            <div class="modal_island">
+                <div class="modal_island_window" modal_island_state = "arrow">
+                    <div class="modal_circle" modal_circle_state="arrow"></div>
+                    <div modal_close class="modal_close">
+                        <img src="img/html_island/modal_close.png"  >
+                    </div>  
+                    <div class="modal_name" >Построение сеток (80/100)</div>
+                    <div class="modal_btns" >
+                        <div class="modal_btn_video" ><img src="img/html_island/play.png"  ></div>
+                        <div class="modal_btn_text" ><img src="img/html_island/text.png"  ></div>
+                        <div class="modal_btn_forum" ><img src="img/html_island/message.png"  ></div>
+                        <div class="modal_btn_test" >Тест</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="eventModal dnone">
+            <div class="eventModal-header">
+                <div class="eventModal-title">title</div>
+                <div class="eventModal-closeBtn"></div>
+            </div>
+            <div class="eventModal-content">
+                <div class="eventModal-info">
+                    <div class="eventModal-city">Yb;ybq Yjdujhjl</div>
+                    <div class="eventModal-company">Epam</div>
+                    <div class="eventModal-hashtags">#java #front</div>
+                </div>
+                <div class="eventModal-btn"></div>
+            </div>
+        </div>
         
         <script src="cordova.js"></script>
         <script src="js/jQuery.js"></script>
         <script src="js/store.js"></script>
+        <script src="js/helper/helper.js"></script>
+        <script src="js/islands/html_island.js"></script>
+        <script src="js/islands/eng_island.js"></script>
+        <script src="js/islands/mathan_island.js"></script>
+        <script src="js/islands/java_island.js"></script>
+        <script src="js/islands/sopr_island.js"></script>
         <script src="js/theme.js"></script>
         <script src="js/tabs/tab_event.js"></script>
         <script src="js/tabs/tab_forum.js"></script>
@@ -70,6 +173,9 @@
         <script src="js/tabs/tab_intern.js"></script>
         <script src="js/tabs/tab_island.js"></script>
         <script src="js/tabs/tab_profile.js"></script>
+        <script src="js/game/game.js"></script>
+        <script src="js/modal.js"></script>
+        <script src="js/test/test.js"></script>
         <script src="js/manager.js"></script>
         <script src="js/listener.js"></script>
 
